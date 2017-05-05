@@ -1,17 +1,27 @@
 extends layout
 
 block stylesheets
-    link(rel='stylesheet', href='/css/style.css')
+  link(rel='stylesheet', href='/css/style.css')
 block content
+  .container
     .player
-        video.viewer(src='videos/thunderInParadise.webm' autoplay)
-        .controls
-            .progress
-                .progress-filled
-            button.player-button.toggle(title='Toggle Play') &#x25BA;
-            input.slider(type='range', name='volume', min='0', max='1', step='0.05', value='1')
-            input.slider(type='range', name='playbackRate', min='0.5', max='2', step='0.1', value='1') 
-            button.player-button(data-skip='-10') &laquo; 10s
-            button.player-button(data-skip='10') 10s &raquo;
-            button.player-button.fullscreen &#xF0B2;
+      video.viewer(src='/videos/thunderInParadise.webm' autoplay)
+      .controls
+        .progress
+          .progress-filled
+        button.player-button.toggle(title='Toggle Play') &#x25BA;
+        button.player-button.volume-toggle(data-level='full') &#128266;
+        input.slider(type='range', name='volume', min='0', max='1', step='0.05', value='1')
+        input.slider(type='range', name='playbackRate', min='0.5', max='2', step='0.1', value='1')
+        button.player-button(data-skip='-10') &laquo; 10s
+        button.player-button(data-skip='10') 10s &raquo;
+        button.player-button.fullscreen &#xF0B2;
+    .list
+      each file, index in files
+        if index === 0
+          .list-item.active(data-video=file)
+            video(src=file + '#t=76')
+        else
+          .list-item(data-video=file)
+            video(src=file)
     script(src='/js/app.js')
