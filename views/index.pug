@@ -1,0 +1,32 @@
+extends layout
+block stylesheets
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/libs/lightgallery/css/lightgallery.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+block content
+    .section.full-height
+        .container.animated.fadeInUp.row
+            .svg-container
+                include partials/logo
+            .text-container
+                h2.light
+                    | Annemarie&nbsp
+                    b Hereford
+                h3.grey Designer and Creator of Amazing Things
+                a.colored.sliding-middle-out(href='mailto:annemariephereford@gmail.com')
+                    h3 annemariephereford@gmail.com
+    //- .hint
+    //-     span.hint-text Scroll down to see more
+    //-     .arrow-down
+    include partials/about
+    include partials/lightgallery
+    .hint
+        span.hint-text Take a look at what I've been up to
+        .arrow-down
+    include partials/work
+    .hint
+        span.hint-text I'm taken sorry.
+        .arrow-down
+    include partials/contact
+    script(src='/libs/lightgallery/js/lightgallery.min.js')
+    script(src='/js/script.js')

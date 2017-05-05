@@ -1,0 +1,49 @@
+svg {
+    transform-origin: center;
+}
+
+svg, polygon {
+    transition: 0.8s;
+}
+
+polygon#bottom-center {
+    transform-origin: bottom;
+}
+
+
+/* top middle */
+
+svg:hover #middle-middle, svg:hover #top-center {
+    transform: translateY(-20px);
+}
+
+
+/* bottom left */
+
+svg:hover #bottom-left, svg:hover #bottom-center-left {
+    transform: translate(-20px, 10px);
+}
+
+
+/* bottom right */
+
+svg:hover #bottom-right, svg:hover #bottom-center-right {
+    transform: translate(20px, 10px);
+}
+
+
+/* bottom center */
+
+svg:hover #bottom-center {
+    transform: rotate(60deg) translateX(-100px);
+}
+
+svg:hover {
+    animation: rotate 2s ease 0.8s forwards;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

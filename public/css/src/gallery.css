@@ -1,0 +1,28 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-item {
+    padding: 3rem;
+}
+
+#flex-img {
+    height: 300px;
+    width: 450px;
+    transition: all 1s;
+}
+
+#flex-img:hover {
+    transition: all 1s;
+    transform: scale(1.1, 1.1);
+}
+
+.squeeze {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 25%;
+}
